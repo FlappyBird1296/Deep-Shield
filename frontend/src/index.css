@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Neon animated radial background */
+:root {
+  --bg-dark: #070617;
+  --purple-1: rgba(124,77,255,0.12);
+  --blue-1: rgba(61,213,255,0.10);
+}
+
+/* make sure body uses the tailwind classes too */
+body {
+  background-color: var(--bg-dark);
+}
+
+/* big neon radial blobs */
+.neon-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+  background: radial-gradient(800px 400px at 10% 20%, var(--purple-1), transparent 8%),
+              radial-gradient(700px 350px at 85% 80%, var(--blue-1), transparent 8%),
+              linear-gradient(180deg, rgba(6,6,15,0.9), rgba(8,8,20,0.95));
+  -webkit-transform: translateZ(0);
+  animation: slowShift 18s ease-in-out infinite;
+  pointer-events: none;
+  filter: saturate(1.05);
+}
+
+@keyframes slowShift {
+  0% { background-position: 10% 20%, 85% 80%; }
+  50% { background-position: 5% 30%, 90% 70%; }
+  100% { background-position: 10% 20%, 85% 80%; }
+}
+
+/* glass card look for dark theme */
+.glass-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.06);
+  backdrop-filter: blur(8px) saturate(1.1);
+}
+
+/* neon button (primary) */
+.btn-neon {
+  background: linear-gradient(90deg, #7c4dff, #3dd5ff);
+  box-shadow: 0 6px 30px rgba(124,77,255,0.14), 0 0 18px rgba(61,213,255,0.08);
+  color: white;
+}
+
+/* subtle neon outline for frames */
+.neon-outline {
+  box-shadow: 0 2px 16px rgba(61,213,255,0.04), inset 0 0 8px rgba(124,77,255,0.03);
+  border: 1px solid rgba(255,255,255,0.04);
+}
+
+/* loader style override (keeps dark look) */
+.loader{
+  border: 4px solid rgba(255,255,255,0.06);
+  border-top-color: rgba(124,77,255,0.9);
+}
+
+/* text tones */
+.text-dim { color: rgba(255,255,255,0.72); }
+.text-subtle { color: rgba(255,255,255,0.5); }
+
+.neon {
+  background: linear-gradient(90deg, #7c4dff, #3dd5ff);
+}
+
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 0.4s ease;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
