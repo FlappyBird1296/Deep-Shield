@@ -63,22 +63,23 @@ Designed with a FastAPI backend, Vite–React frontend, and real-time inference 
 
 # 1️⃣ Clone the repository
 
-git clone https://github.com/FlappyBird1296/DeepShield.git
-cd DeepShield
+    git clone https://github.com/FlappyBird1296/Deep-Shield.git
+    cd DeepShield
 
 # 🖥️ Backend Setup
 
-cd backend
-pip install -r requirements.txt
-uvicorn main:app --reload
+    cd backend
+    pip install -r requirements.txt
+    uvicorn main:app --reload
 
 Your API now runs at:
 👉 http://localhost:8000
 
 # 🌐 Frontend Setup
-cd frontend
-npm install
-npm run dev
+
+    cd frontend
+    npm install
+    npm run dev
 
 Your UI runs at:
 👉 http://localhost:5173
